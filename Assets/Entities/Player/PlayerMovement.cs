@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 0.05f;
+    public GameObject chainPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -37,9 +38,12 @@ public class PlayerMovement : MonoBehaviour
         
         float PlayerX = Mathf.Clamp(transform.position.x, -71, 71);
         transform.position = new Vector3(PlayerX, transform.position.y, transform.position.z);
-        float PlayerY = Mathf.Clamp(transform.position.x, -54, 54);
+        float PlayerY = Mathf.Clamp(transform.position.y, -54, 54);
         transform.position = new Vector3(transform.position.x, PlayerY, transform.position.z);
-        //-54, 54
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(chainPrefab, transform.position, Quaternion.identity);
+        }
     }
 }
