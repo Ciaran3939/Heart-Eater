@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.position += new Vector3(0, -1, 0) * speed;
         }
-        
+
         float PlayerX = Mathf.Clamp(transform.position.x, -71, 71);
         transform.position = new Vector3(PlayerX, transform.position.y, transform.position.z);
         float PlayerY = Mathf.Clamp(transform.position.y, -54, 54);
