@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 0.05f;
     public GameObject chainPrefab;
+    public static int Health = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +45,15 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(chainPrefab, transform.position, Quaternion.identity);
+        }
+
+        void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (Health < 0)
+            {
+                Health--;
+                Application.LoadLevel("Lose");
+            }
         }
     }
 }
