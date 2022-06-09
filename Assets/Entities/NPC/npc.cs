@@ -18,6 +18,10 @@ public class npc : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        if (collision.transform.name == "Ninja Spritesheet (2)")
+        {
+            Destroy(gameObject);
+        }
+        transform.SetParent(collision.transform);
     }
 }
