@@ -14,13 +14,13 @@ public class PlayerLife : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("NPC"))
         {
-            playerHealth = playerHealth + 10f;
+            playerHealth = playerHealth + 15f;
             healthText.text = "Player Health: " + playerHealth;
         }
 
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            playerHealth = playerHealth - 25f;
+            playerHealth = playerHealth - 50f;
             healthText.text = "Player Health: " + playerHealth;
         }
 

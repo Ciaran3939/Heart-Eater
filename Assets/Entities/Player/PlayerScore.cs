@@ -20,12 +20,12 @@ public class PlayerScore : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            playerScore = playerScore + 2f;
+            playerScore = playerScore + 3f;
             scoreText.text = "Player Health: " + playerScore;
         }
 
 
-        if (playerScore >= 6)
+        if (playerScore >= 7)
         {
             Application.LoadLevel("Win");
         }
